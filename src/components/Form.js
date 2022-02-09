@@ -5,7 +5,7 @@ const initialFormValues = {
     description: '',
 }
 
-const Form = ({todoAdd}) => {
+const Form = ({ todoAdd }) => {
 
     const [formValues, setFormValues] = useState(initialFormValues);
     const {title, description} = formValues;
@@ -26,7 +26,7 @@ const Form = ({todoAdd}) => {
         //     if (title === '' || description === '') {
         //         return
         //     }
-        // console.log(formValues);
+        console.log(formValues);
         todoAdd(formValues);
     }
 

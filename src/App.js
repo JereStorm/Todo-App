@@ -35,32 +35,32 @@ const App = () => {
 
     const todoDelete = (todoId) =>{
         const changedTodos = todos.filter(todo => todo.id !== todoId);
+        console.log(changedTodos);
         setTodos(changedTodos);
     }
 
     const todoToggleCompleted = (todoId) => {
         
         const changedTodos = todos.map(todo => todoId === todo.id ? {...todo, completed: !todo.completed} : todo)
+        console.log(changedTodos);
         setTodos(changedTodos);
     }
 
     const todoAdd = (todo) => {
 
         const newTodo = {
-            id: 48,
+            id: Date.now(),
             ...todo,
             completed: false
         }
-        const changedTodos = {
+        const changedTodos = [
             ...todos,
             newTodo
-        }
+        ]
 
-// console.log('newTodo: ', newTodo);
-console.log('changedTodos: ', changedTodos);
-
-      setTodos(changedTodos) 
+        setTodos(changedTodos);
     }
+    
     return(
         <section className='container mt-5 '>
             

@@ -8,10 +8,10 @@ const TodoList = ({todos, todoDelete, todoToggleCompleted}) =>{
     return (
         <div> 
             {
-                todos.map((todo, index) => (
+                todos.map((todo) => (
                     <Todo
                         todo={todo} 
-                        key={index}
+                        key={todo.id}
                         todoDelete={todoDelete}
                         todoToggleCompleted={todoToggleCompleted}
                     />
