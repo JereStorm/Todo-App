@@ -1,8 +1,12 @@
 import React from 'react';
+import Form from './Form'
 
-const TodoForm = () => {
+const TodoForm = ({ todoAdd }) => {
+
     return(
-        <h1>To do Form</h1>
+        <div>
+            <Form todoAdd={todoAdd} />
+        </div>
     );
 };
 

@@ -20,18 +20,16 @@ const Todo = ({todo, todoDelete, todoToggleCompleted}) =>{
                 < hr />
                 <div className='d-flex justify-content-end'>
                     <button 
-                    
-                    className='btn btn-sm btn-primary me-2'>Editar</button>
+                        className='btn btn-sm btn-primary me-2'>
+                            <i className="bi bi-pen"></i>
+                    </button>
                     <button 
-                    onClick={() => todoDelete(todo.id)}
-                    className='btn btn-sm btn-danger'
-                    >
-                        Borrar
+                        onClick={() => todoDelete(todo.id)}
+                        className='btn btn-sm btn-danger'>
+                            <i className="bi bi-trash-fill"></i>
                     </button>
 
                 </div>
-
-                
             </div>
         </div>
     );
