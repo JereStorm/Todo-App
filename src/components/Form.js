@@ -23,9 +23,9 @@ const Form = ({ todoAdd }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('submit');
-        //     if (title === '' || description === '') {
-        //         return
-        //     }
+            if (title === '') {
+                return
+            }
         console.log(formValues);
         todoAdd(formValues);
     }
