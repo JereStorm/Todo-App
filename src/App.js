@@ -1,38 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
  
 const initialTodos = [
-    {
-        id: 1,
-        title: 'Todo #1',
-        description: 'Desc del Todo #1',
-        completed: true,
-    },
-    {
-        id: 2,
-        title: 'Todo #2',
-        description: 'Desc del Todo #2',
-        completed: false,
-    },
-    {
-        id: 3,
-        title: 'Todo #3',
-        description: 'Desc del Todo #3',
-        completed: true,
-    },
-    {
-        id: 4,
-        title: 'Todo #4',
-        description: 'Desc del Todo #4',
-        completed: false,
-    },
+    
 ];
+
+const localTodos = JSON.parse(localStorage.getItem('todos'));
 
 const App = () => {
 
-    const [todos, setTodos] = useState(initialTodos);
+    const [todos, setTodos] = useState(localTodos || initialTodos);
     const [todoEdit, setTodoEdit] = useState(null);
+
+    useEffect(() =>{
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos])
 
     const todoDelete = (todoId) =>{
         if (todoEdit && todoId === todoEdit.id) {

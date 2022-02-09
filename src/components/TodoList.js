@@ -11,7 +11,7 @@ const TodoList = ({todos, todoDelete, todoToggleCompleted, setTodoEdit}) =>{
                 todos.length === 0
                 ? (
                     <div className='mt-2 alert alert-primary'>
-                        No to do's yet... Make once one
+                        No notes yet, write some
                     </div>
                 )
                 : (
